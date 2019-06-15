@@ -1,5 +1,6 @@
 package com.uca.capas.domain;
 
+import java.math.BigInteger;
 import java.sql.Time;
 import java.util.List;
 
@@ -13,6 +14,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.PositiveOrZero;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(schema= "public", name = "sucursal")
@@ -37,7 +44,7 @@ public class Sucursal {
 	private Time horarioSalida;
 	
 	@Column(name = "numeroMesas")
-	private Integer numeroMesas;
+	private BigInteger numeroMesas;
 	
 	@Column(name = "nombreGerente")
 	private String nombreGerente;
@@ -50,7 +57,7 @@ public class Sucursal {
 	}
 
 	public Sucursal(Integer idSucursal, String nombreSucursal, String ubicacionSucursal, Time horarioEntrada,
-			Time horarioSalida, Integer numeroMesas, String nombreGerente, List<Empleado> empleados) {
+			Time horarioSalida, BigInteger numeroMesas, String nombreGerente, List<Empleado> empleados) {
 		//super();
 		this.idSucursal = idSucursal;
 		this.nombreSucursal = nombreSucursal;
@@ -102,11 +109,11 @@ public class Sucursal {
 		this.horarioSalida = horarioSalida;
 	}
 
-	public Integer getNumeroMesas() {
+	public BigInteger getNumeroMesas() {
 		return numeroMesas;
 	}
 
-	public void setNumeroMesas(Integer numeroMesas) {
+	public void setNumeroMesas(BigInteger numeroMesas) {
 		this.numeroMesas = numeroMesas;
 	}
 

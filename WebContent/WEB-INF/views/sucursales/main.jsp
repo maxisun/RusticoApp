@@ -41,8 +41,8 @@
 				</form>
 				</td>
 				<td>
-				<form name="editarSucursal" action="${pageContext.request.contextPath}/sucursal/editar" method="post">
-            		<input type="hidden" name="ids" value=${sucursales.idSucursal}>
+				<form name="editarSucursal" action="${pageContext.request.contextPath}/sucursal/ver" method="post">
+            		<input type="hidden" name="editId" value=${sucursales.idSucursal}>
             		<input type="Submit" value="Editar">
 				</form>
 				</td>

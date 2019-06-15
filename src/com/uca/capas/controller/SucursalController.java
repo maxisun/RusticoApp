@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.uca.capas.dto.LoginDTO;
+import com.uca.capas.domain.Sucursal;
+import com.uca.capas.dto.EditarDTO;
 import com.uca.capas.service.EmpleadoService;
 import com.uca.capas.service.SucursalService;
 
@@ -44,10 +45,23 @@ public class SucursalController {
 		return mav;
 	}
 	
-	@RequestMapping(value = "/sucursal/editar", method = RequestMethod.POST)
-	public ModelAndView editar(@RequestParam(name = "valorId") Integer id){
+	@RequestMapping(value = "/sucursal/ver", method = RequestMethod.POST)
+	public ModelAndView ver(@RequestParam(name = "editId") Integer id){
 		ModelAndView mav = new ModelAndView();
-		
+		mav.addObject("editarDTO", sucursalService.obtenerSucursalDTO(id));
+		mav.setViewName("sucursales/edit");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/sucursal/editar", method = RequestMethod.POST)
+	public ModelAndView editar(@Valid @ModelAttribute EditarDTO editarDTO, BindingResult result){
+		ModelAndView mav = new ModelAndView();
+		if(result.hasErrors()) {
+			mav.setViewName("sucursales/edit");
+		}else {
+			sucursalService.editarSucursal(editarDTO);
+			mav.setViewName("sucursales/main");
+		}
 		return mav;
 	}
 
