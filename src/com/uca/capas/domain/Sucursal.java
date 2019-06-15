@@ -3,6 +3,7 @@ package com.uca.capas.domain;
 import java.sql.Time;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -41,7 +42,7 @@ public class Sucursal {
 	@Column(name = "nombreGerente")
 	private String nombreGerente;
 
-	@OneToMany(mappedBy = "sucursal", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "sucursal", fetch = FetchType.LAZY, orphanRemoval = true, cascade = CascadeType.PERSIST)
 	private List<Empleado> empleados;
 
 	public Sucursal() {
@@ -126,11 +127,19 @@ public class Sucursal {
 	}
 	
 	//Delegate Functions
-	public String getActivoDelegate() {
+	public String getHorarioEntradaDelegate() {
 		if(this.horarioEntrada == null) return "";
 		else {
 			String horaEntrada = horarioEntrada.toString().substring(0, 5);
 			return horaEntrada;
+		}
+	}
+	
+	public String getHorarioSalidaDelegate() {
+		if(this.horarioSalida == null) return "";
+		else {
+			String horarSalida = horarioSalida.toString().substring(0, 5);
+			return horarSalida;
 		}
 	}
 }

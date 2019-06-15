@@ -13,34 +13,20 @@ import javax.persistence.Table;
 public class Usuario {
 
 	@Id
-	@GeneratedValue(generator = "usuario_idusuario_seq", strategy = GenerationType.AUTO)
-	@SequenceGenerator(name = "usuario_idusuario_seq", sequenceName = "public.usuario_idusuario_seq", allocationSize = 1)
-	@Column(name = "IdUsuario")
-	private Integer idUsuario;
-	
 	@Column(name = "nombreUsuario")
 	private String nombreUsuario;
 	
 	@Column(name = "claveUsuario")
 	private String claveUsuario;
 
-	public Usuario(Integer idUsuario, String nombreUsuario, String claveUsuario) {
+	public Usuario(String nombreUsuario, String claveUsuario) {
 		super();
-		this.idUsuario = idUsuario;
 		this.nombreUsuario = nombreUsuario;
 		this.claveUsuario = claveUsuario;
 	}
 
 	public Usuario() {
 		super();
-	}
-
-	public Integer getIdUsuario() {
-		return idUsuario;
-	}
-
-	public void setIdUsuario(Integer idUsuario) {
-		this.idUsuario = idUsuario;
 	}
 
 	public String getNombreUsuario() {
@@ -59,7 +45,4 @@ public class Usuario {
 		this.claveUsuario = claveUsuario;
 	}
 
-	
-	
-	
 }

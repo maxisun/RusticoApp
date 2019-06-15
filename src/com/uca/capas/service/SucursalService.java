@@ -7,4 +7,8 @@ import com.uca.capas.domain.Sucursal;
 public interface SucursalService {
 
 	public List<Sucursal> findAll();
+	
+	public void eliminarSucursal(Integer id);
+	
+	public Sucursal findOne(Integer id);
 }
