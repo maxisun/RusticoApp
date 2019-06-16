@@ -1,5 +1,7 @@
 package com.uca.capas.domain;
 
+import java.math.BigInteger;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -25,7 +27,7 @@ public class Empleado {
 	private String nombreEmpleado;
 	
 	@Column(name = "edadEmpleado")
-	private Integer edadEmpleado;
+	private BigInteger edadEmpleado;
 	
 	@Column(name = "generoEmpleado")
 	private Character generoEmpleado;
@@ -41,7 +43,7 @@ public class Empleado {
 		//super();
 	}
 
-	public Empleado(Integer idEmpleado, String nombreEmpleado, Integer edadEmpleado, Character generoEmpleado,
+	public Empleado(Integer idEmpleado, String nombreEmpleado, BigInteger edadEmpleado, Character generoEmpleado,
 			Boolean estadoEmpleado, Sucursal sucursal) {
 		//super();
 		this.idEmpleado = idEmpleado;
@@ -68,11 +70,11 @@ public class Empleado {
 		this.nombreEmpleado = nombreEmpleado;
 	}
 
-	public Integer getEdadEmpleado() {
+	public BigInteger getEdadEmpleado() {
 		return edadEmpleado;
 	}
 
-	public void setEdadEmpleado(Integer edadEmpleado) {
+	public void setEdadEmpleado(BigInteger edadEmpleado) {
 		this.edadEmpleado = edadEmpleado;
 	}
 

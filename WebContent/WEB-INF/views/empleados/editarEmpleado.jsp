@@ -30,7 +30,7 @@
 			<div class="row">
 				<div class="col-md-12 form-group">
 					<form:label path = "edadEmpleado">Edad: </form:label>
-					<form:input type="text" class="form-control" name="ubicacion" path="edadEmpleado"/>
+					<form:input type="number" class="form-control" name="ubicacion" path="edadEmpleado"/>
 					<form:errors path="edadEmpleado" cssStyle="color:red;"></form:errors>
 				</div>
 			</div>

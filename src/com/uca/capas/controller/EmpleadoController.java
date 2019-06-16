@@ -56,6 +56,7 @@ public class EmpleadoController {
 			@RequestParam(name = "empId") Integer empId){
 		ModelAndView mav = new ModelAndView();
 		if(result.hasErrors()) {
+			mav.addObject("IdPadre", empId);
 			mav.setViewName("empleados/editarEmpleado");
 		}else {
 			empleadoService.editarEmpleado(editarDTO);

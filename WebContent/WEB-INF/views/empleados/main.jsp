@@ -17,6 +17,7 @@
 				location.href = "${pageContext.request.contextPath}/empleado/main?id=${sucursal.idSucursal}"
 			}
     </script>
+    <button onclick="location.href='${pageContext.request.contextPath}/sucursal/main'" class="btn btn-default">Ver todas las Sucursales</button>
 	<table id="table" border=1>
 		<tr>
 			<th>Nombre</th>

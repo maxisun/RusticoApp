@@ -1,5 +1,7 @@
 package com.uca.capas.dto;
 
+import java.math.BigInteger;
+
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -19,7 +21,7 @@ public class EditarEmpDTO {
 	@NotNull(message="favor ingresar edad")
 	@Digits(message = "la edad sobrepasa de los 100 anios", integer = 2, fraction = 0)
 	@Range(min = 18, max = 75, message = "Ingrese una edad valida de trabajo [18-75]")
-	private Integer edadEmpleado;
+	private BigInteger edadEmpleado;
 	
 	@NotNull(message="favor ingresar genero")
 	private Character generoEmpleado;
@@ -47,11 +49,11 @@ public class EditarEmpDTO {
 		this.nombreEmpleado = nombreEmpleado;
 	}
 
-	public Integer getEdadEmpleado() {
+	public BigInteger getEdadEmpleado() {
 		return edadEmpleado;
 	}
 
-	public void setEdadEmpleado(Integer edadEmpleado) {
+	public void setEdadEmpleado(BigInteger edadEmpleado) {
 		this.edadEmpleado = edadEmpleado;
 	}
 
