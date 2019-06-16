@@ -17,4 +17,6 @@ public interface EmpleadoRepository extends JpaRepository<Empleado,Integer>{
 			+ "from empleado"
 			+ "where idSucursal = ?1")
 	public List<Empleado> findEmpleadosinSucursal(Integer dato);
+	
+	public Empleado getOne(Integer id);
 }

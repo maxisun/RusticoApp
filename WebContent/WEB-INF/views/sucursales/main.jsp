@@ -17,25 +17,16 @@
 				location.href = "${pageContext.request.contextPath}/sucursal/main"
 			}
     </script>
+    <button onclick="location.href='${pageContext.request.contextPath}/sucursal/nueva'" class="btn btn-default">Registrar Sucursal</button>
 	<table id="table" border=1>
 		<tr>
 			<th>Nombre</th>
-			<th>Ubicaci&oacute;n</th>
-			<th>Horario Entrada</th>
-			<th>Horario Salida</th>
-			<th>Numero de Mesas</th>
-			<th>Gerente Encargado</th>
 		</tr>
 		<c:forEach items="${sucursales}" var="sucursales" varStatus="status">
 			<tr>
 				<td>${sucursales.nombreSucursal}</td>
-				<td>${sucursales.ubicacionSucursal}</td>
-				<td>${sucursales.horarioEntradaDelegate}</td>
-				<td>${sucursales.horarioSalidaDelegate}</td>
-				<td>${sucursales.numeroMesas}</td>
-				<td>${sucursales.nombreGerente}</td>
 				<td>
-				<form name="verPerfil" action="${pageContext.request.contextPath}/sucursal/perfil" method="post">
+				<form name="verPerfil" action="${pageContext.request.contextPath}/empleado/main" method="post">
             		<input type="hidden" name="id" value=${sucursales.idSucursal}>
             		<input type="Submit" value="Ver Perfil">
 				</form>

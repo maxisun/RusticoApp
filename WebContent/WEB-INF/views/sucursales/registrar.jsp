@@ -11,13 +11,13 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" href="resources/css/login.css">
-<title>Editar Sucursal</title>
+<title>Registrar Sucursal</title>
 </head>
 <body>
 <div class="simple-login-container">
-	<h2>Editar</h2>
-	<form:form id="holi" action="${pageContext.request.contextPath}/sucursal/editar" method="POST" modelAttribute="editarDTO">
-		<form:input type="hidden" name="id" path="idSucursal"/>
+	<h2>Registrar</h2>
+	<form:form id="holi" action="${pageContext.request.contextPath}/sucursal/registrar" method="POST" modelAttribute="editarDTO">
+		<form:input type="hidden" name="id" value="1" path="idSucursal"/>
 		
 			<div class="row">
 				<div class="col-md-12 form-group">
@@ -68,12 +68,10 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12 form-group">
-				<input id="enviar" type = "submit" value="Guardar Cambios" class="btn btn-block btn-login">
-					<!--button id="enviar" onclick="acceptTransaction()" class="btn btn-block btn-login">Guardar Cambios</button> -->
+				<input id="enviar" type = "submit" value="Agregar Sucursal" class="btn btn-block btn-login">
 				</div>
 			</div>
 		</form:form>
-
 </div>
 </body>
 </html>

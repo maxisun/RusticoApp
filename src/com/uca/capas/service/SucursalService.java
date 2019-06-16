@@ -16,4 +16,6 @@ public interface SucursalService {
 	public EditarDTO obtenerSucursalDTO(Integer id);
 	
 	public void editarSucursal(EditarDTO dto);
+	
+	public void agregarSucursal(EditarDTO dto);
 }

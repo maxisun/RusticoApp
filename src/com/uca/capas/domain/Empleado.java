@@ -100,4 +100,28 @@ public class Empleado {
 		this.sucursal = sucursal;
 	}
 	
+	//Delegate Functions
+	public String getgeneroEmpleadoDelegate() {
+		String sexo = null;
+		if(this.generoEmpleado == null) {
+			sexo = "";
+		} else if(this.generoEmpleado.equals('f') || this.generoEmpleado.equals('F')) {
+			sexo = "Femenino";
+		} else if(this.generoEmpleado.equals('m') || this.generoEmpleado.equals('M')) {
+			sexo = "Masculino";
+		}
+		return sexo;
+	}
+	
+	public String getestadoEmpleadoDelegate() {
+		String estado = null;
+		if(this.estadoEmpleado == null) {
+			estado = "";
+		} else if(this.estadoEmpleado) {
+			estado = "Activo";
+		} else {
+			estado = "Inactivo";
+		}
+		return estado;
+	}
 }

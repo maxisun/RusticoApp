@@ -64,5 +64,25 @@ public class SucursalController {
 		}
 		return mav;
 	}
+	
+	@RequestMapping(value = "/sucursal/nueva", method = RequestMethod.GET)
+	public ModelAndView registrar(){
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("editarDTO", new EditarDTO());
+		mav.setViewName("sucursales/registrar");
+		return mav;
+	}
 
+	@RequestMapping(value = "/sucursal/registrar", method = RequestMethod.POST)
+	public ModelAndView nuevaSucursal(@Valid @ModelAttribute EditarDTO editarDTO, BindingResult result){
+		ModelAndView mav = new ModelAndView();
+		if(result.hasErrors()) {
+			mav.setViewName("sucursales/registrar");
+		}else {
+			sucursalService.agregarSucursal(editarDTO);
+			mav.setViewName("sucursales/main");
+		}
+		return mav;
+	}
+	
 }

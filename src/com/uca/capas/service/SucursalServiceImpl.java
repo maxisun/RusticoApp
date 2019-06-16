@@ -72,4 +72,19 @@ public class SucursalServiceImpl implements SucursalService{
 		entitymanager.flush();
 	}
 
+	@Override
+	@Transactional
+	public void agregarSucursal(EditarDTO dto) {
+		// TODO Auto-generated method stub
+		Sucursal succ = new Sucursal();
+		succ.setNombreSucursal(dto.getNombreSucursal());
+		succ.setUbicacionSucursal(dto.getUbicacionSucursal());
+		succ.setHorarioEntrada(dto.getHorarioEntradaDelegate());
+		succ.setHorarioSalida(dto.getHorarioSalidaDelegate());
+		succ.setNumeroMesas(dto.getNumeroMesas());
+		succ.setNombreGerente(dto.getNombreGerente());
+		entitymanager.persist(succ);
+		entitymanager.flush();
+	}
+
 }
