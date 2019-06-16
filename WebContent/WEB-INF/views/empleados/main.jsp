@@ -36,6 +36,8 @@
 		</tr>
 	</table>
 	<br>
+	<button onclick="location.href='${pageContext.request.contextPath}/empleado/nuevo?id=${sucursal.idSucursal}'" class="btn btn-default">Registrar Empleado</button>
+	<br>
 		<table id="table" border=1>
 		<tr>
 			<th>Nombre</th>
@@ -50,8 +52,9 @@
 			<td>${empleados.generoEmpleadoDelegate}</td>
 			<td>${empleados.estadoEmpleadoDelegate}</td>
 			<td>
-				<form name="editarSucursal" action="${pageContext.request.contextPath}/sucursal/ver" method="post">
-            		<input type="hidden" name="deleteId" value=${empleados.idEmpleado}>
+				<form name="editarSucursal" action="${pageContext.request.contextPath}/empleado/ver" method="post">
+            		<input type="hidden" name="empId2" value=${empleados.idEmpleado}>
+            		<input type="hidden" name="sucId2" value=${empleados.sucursal.idSucursal}>
             		<input type="Submit" value="Editar">
 				</form>
 			</td>

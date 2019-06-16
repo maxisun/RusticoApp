@@ -18,11 +18,11 @@ public class EditarDTO {
 	private Integer idSucursal;
 	
 	@NotEmpty(message = "favor ingrese el nombre de la sucursal")
-	@Size(message = "la longitud maxima es de 150 caracteres", min = 0, max = 100)
+	@Size(message = "la longitud maxima es de 100 caracteres", min = 0, max = 100)
 	private String nombreSucursal;
 	
 	@NotEmpty(message = "favor ingrese la ubicacion de la sucursal")
-	@Size(message = "la longitud maxima es de 150 caracteres", min = 0, max = 100)
+	@Size(message = "la longitud maxima es de 100 caracteres", min = 0, max = 100)
 	private String ubicacionSucursal;
 
 	@NotEmpty(message = "favor ingresar una hora")
@@ -37,7 +37,7 @@ public class EditarDTO {
 	private BigInteger numeroMesas;
 	
 	@NotEmpty(message = "favor ingrese el nombre del gerente")
-	@Size(message = "la longitud maxima es de 150 caracteres", min = 0, max = 100)
+	@Size(message = "la longitud maxima es de 100 caracteres", min = 0, max = 100)
 	private String nombreGerente;
 
 	public EditarDTO() {
