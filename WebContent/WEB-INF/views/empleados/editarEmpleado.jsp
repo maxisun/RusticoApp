@@ -14,8 +14,8 @@
 <title>Editar Empleado</title>
 </head>
 <body>
-<div class="simple-login-container">
-	<h2>Editar Empleado</h2>
+<div class="container">
+	<h2 class="text-center">Editar Empleado</h2>
 	<form:form id="holi" action="${pageContext.request.contextPath}/empleado/editar" method="POST" modelAttribute="editarEmpDTO">
 		<form:input type="hidden" name="id" path="idEmpleado"/>
 		<input type="hidden" name="empId" value="${IdPadre}"/>
@@ -56,8 +56,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12 form-group">
-				<input id="enviar" type = "submit" value="Guardar Cambios" class="btn btn-block btn-login">
-					<!--button id="enviar" onclick="acceptTransaction()" class="btn btn-block btn-login">Guardar Cambios</button> -->
+				<input id="enviar" type = "submit" value="Guardar Cambios" class="btn btn-block btn-login btn-warning">
 				</div>
 			</div>
 		</form:form>
