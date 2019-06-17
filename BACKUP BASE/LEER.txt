@@ -2,3 +2,8 @@ iniciar sesion
 
 username: max00797@gmail.com
 password: lolis
+
+CONFIGURACION JPA:
+dataSource.setUrl("jdbc:postgresql://127.0.0.1:5432/tareaNCapas")
+dataSource.setUsername("postgres")
+dataSource.setPassword("F@ker1997")
